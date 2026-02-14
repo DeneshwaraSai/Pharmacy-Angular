@@ -1,0 +1,27 @@
+<input [(ngModel)]="id" type="number" placeholder="Give a ID" />
+<button (click)="getById()">Submit</button>
+<br /><br />
+<br />
+
+@if (jsonHolderInfo) {
+  <table>
+    <thead>
+      <tr>
+        <th>userId</th>
+        <th>id</th>
+        <th>title</th>
+        <th>body</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (codeValue of jsonHolderInfo; track codeValue) {
+        <tr>
+          <th>{{ codeValue.userId }}</th>
+          <th>{{ codeValue.id }}</th>
+          <th>{{ codeValue.title }}</th>
+          <th>{{ codeValue.body }}</th>
+        </tr>
+      }
+    </tbody>
+  </table>
+}
